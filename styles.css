@@ -1,37 +1,26 @@
 body {
     font-family: Arial, sans-serif;
     margin: 20px;
-    background-color: #121212;
-    color: #ffffff;
 }
 
 h1 {
     text-align: center;
-    color: #ffffff;
 }
 
 form {
     max-width: 600px;
     margin: 0 auto;
-    background-color: #1e1e1e;
-    padding: 20px;
-    border-radius: 8px;
 }
 
 label {
     display: block;
     margin: 10px 0 5px;
-    color: #ffffff;
 }
 
 input, textarea {
     width: 100%;
     padding: 10px;
     margin-bottom: 10px;
-    background-color: #333333;
-    border: 1px solid #555555;
-    color: #ffffff;
-    border-radius: 4px;
 }
 
 button {
@@ -42,7 +31,6 @@ button {
     color: white;
     border: none;
     cursor: pointer;
-    border-radius: 4px;
 }
 
 button:hover {
@@ -52,23 +40,17 @@ button:hover {
 table {
     width: 100%;
     border-collapse: collapse;
-    background-color: #1e1e1e;
-    color: #ffffff;
 }
 
 th, td {
-    border: 1px solid #333333;
+    border: 1px solid #ddd;
     padding: 8px;
 }
 
 th {
-    background-color: #333333;
+    background-color: #f2f2f2;
 }
 
 select, input[type="text"] {
     width: auto;
-    background-color: #333333;
-    border: 1px solid #555555;
-    color: #ffffff;
-    border-radius: 4px;
 }
