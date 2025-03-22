@@ -4,24 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Page</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="admin-styles.css">
 </head>
 <body>
-    <h1>Admin Page</h1>
-    <table id="responsesTable">
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Email</th>
-                <th>Content</th>
-                <th>Status</th>
-                <th>Action</th>
-            </tr>
-        </thead>
-        <tbody>
-            <!-- Responses will be populated here -->
-        </tbody>
-    </table>
+    <!-- Header Section -->
+    <header class="main-header">
+        <h1>Admin Dashboard</h1>
+    </header>
+
+    <!-- Main Content Section -->
+    <main class="content">
+        <div class="table-container">
+            <table class="admin-table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Content</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody id="responsesTableBody">
+                    <!-- Dynamic rows will be inserted here -->
+                </tbody>
+            </table>
+        </div>
+    </main>
+
     <script src="scripts.js"></script>
 </body>
 </html>
