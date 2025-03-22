@@ -1,74 +1,160 @@
+/* General Reset */
+body, h1, p, form, input, textarea, button {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling (Terminal Theme) */
 body {
-    font-family: Arial, sans-serif;
-    margin: 20px;
-    background-color: #121212;
-    color: #ffffff;
-}
-
-h1 {
-    text-align: center;
-    color: #ffffff;
-}
-
-form {
-    max-width: 600px;
-    margin: 0 auto;
-    background-color: #1e1e1e;
+    font-family: "Courier New", Courier, monospace; /* Monospaced font */
+    line-height: 1.6;
+    background-color: #000000; /* Black background */
+    color: #FFFF00; /* Yellow text */
+    margin: 0;
     padding: 20px;
+    animation: flicker 3s infinite; /* Flickering effect for the body */
+}
+
+/* Header Styling */
+.main-header {
+    background-color: #000000; /* Black background */
+    color: #FFFF00; /* Yellow text */
+    padding: 10px 0;
+    text-align: center;
+    border-bottom: 1px solid #FFFF00; /* Yellow border */
+    animation: slideIn 2s ease-out; /* Slide-in animation for the header */
+}
+
+/* Form Container with Rotating Glow */
+.form-container {
+    position: relative;
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background: transparent; /* Transparent background */
+    border: 1px solid #FFFF00; /* Yellow border */
     border-radius: 8px;
+    box-shadow: 0 0 15px rgba(255, 255, 0, 0.4); /* Subtle yellow shadow */
+    overflow: hidden; /* Ensure the pseudo-element stays within bounds */
+    animation: bounce 5s infinite; /* Bouncing effect for the form container */
 }
 
-label {
-    display: block;
-    margin: 10px 0 5px;
-    color: #ffffff;
+.form-container::before {
+    content: '';
+    position: absolute;
+    top: -10px; /* Extend the glow further out */
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    border-radius: 12px; /* Match the container's border-radius */
+    background: linear-gradient(45deg, #000000, #1b1b00, #000000);
+    background-size: 400% 400%; /* Larger gradient for smoother animation */
+    animation: rotateGlow 8s linear infinite; /* Smooth rotation */
+    z-index: -1; /* Place behind the form */
 }
 
+/* Keyframes for Rotating Glow */
+@keyframes rotateGlow {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+/* Keyframes for Slide-In Animation */
+@keyframes slideIn {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+
+/* Form Group */
+.form-group {
+    margin-bottom: 15px;
+    animation: fadeIn 2s ease-in; /* Fade-in effect for form groups */
+}
+
+/* Keyframes for Fade-In Animation */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Input and Textarea Styling */
 input, textarea {
     width: 100%;
     padding: 10px;
-    margin-bottom: 10px;
-    background-color: #333333;
-    border: 1px solid #555555;
-    color: #ffffff;
+    background-color: transparent; /* Transparent background */
+    color: #FFFF00; /* Yellow text */
+    border: 1px solid #FFFF00; /* Yellow border */
     border-radius: 4px;
+    font-size: 16px;
+    font-family: "Courier New", Courier, monospace; /* Monospaced font */
+    animation: pulse 3s infinite; /* Pulsing effect for inputs */
 }
 
-button {
+/* Keyframes for Pulse Animation */
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 5px rgba(255, 255, 0, 0.4);
+    }
+    50% {
+        box-shadow: 0 0 15px rgba(255, 255, 0, 0.6);
+    }
+    100% {
+        box-shadow: 0 0 5px rgba(255, 255, 0, 0.4);
+    }
+}
+
+/* Button Styling */
+.btn-submit {
     display: block;
     width: 100%;
     padding: 10px;
-    background-color: #007BFF;
-    color: white;
-    border: none;
+    background-color: transparent; /* Transparent background */
+    color: #FFFF00; /* Yellow text */
+    border: 1px solid #FFFF00; /* Yellow border */
+    border-radius: 4px;
+    font-size: 16px;
     cursor: pointer;
-    border-radius: 4px;
+    font-family: "Courier New", Courier, monospace; /* Monospaced font */
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-button:hover {
-    background-color: #0056b3;
+.btn-submit:hover {
+    background-color: #FFFF00; /* Yellow background */
+    color: #000000; /* Black text */
 }
 
-table {
-    width: 100%;
-    border-collapse: collapse;
-    background-color: #1e1e1e;
-    color: #ffffff;
-}
-
-th, td {
-    border: 1px solid #333333;
-    padding: 8px;
-}
-
-th {
-    background-color: #333333;
-}
-
-select, input[type="text"] {
-    width: auto;
-    background-color: #333333;
-    border: 1px solid #555555;
-    color: #ffffff;
-    border-radius: 4px;
+/* Keyframes for Shake Animation */
+@keyframes shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-5px);
+    }
+    50% {
+        transform: translateX(5px);
+    }
+    75% {
+        transform: translateX(-5px);
+    }
 }
